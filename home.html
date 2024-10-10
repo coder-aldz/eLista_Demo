@@ -1,0 +1,40 @@
+
+{% extends "base.html" %}
+{% block title %}Temporary Page{% endblock%}
+{% block head %}
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+    }
+    .temp-container {
+        text-align: center;
+    }
+    .temp-container h1 {
+        font-size: 3em;
+        color: #333;
+    }
+    .temp-container p {
+        font-size: 1.5em;
+        color: #666;
+    }
+</style>
+{% endblock %}
+{% block contents %}
+{% if sample_qr %}
+<div>{{ sample_qr.svg_inline(scale=10, border=0) | safe }}</div>
+<p>Scan Me Sample</p>
+{% else %}
+<div></div>
+{% endif %}
+<form method='GET' action="{{ url_for('home_page')}}">
+    <input type="text" name="fname" placeholder="Name" required>
+    <input type="submit" value="Generate QR">
+</form>
+<h1>eLista is still under construction.</h1>
+<p>Please check back later.</p>
+{% endblock %}

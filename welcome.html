@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Temporary Page{% endblock%}
+{% block head %}
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+    }
+    .temp-container {
+        text-align: center;
+    }
+    .temp-container h1 {
+        font-size: 3em;
+        color: #333;
+    }
+    .temp-container p {
+        font-size: 1.5em;
+        color: #666;
+    }
+</style>
+{% endblock %}
+{% block contents %}
+<h1>Welcome to eLista, {{ name }}!!</h1>
+<p>Please check back later.</p>
+{% endblock %}
